@@ -1,0 +1,33 @@
+<div>
+    <button id="버튼"></button>
+</div>
+
+<script>
+    document.getElementById('버튼').addEventListener('click', function(e){
+        // console.log(this); //case 1 this e.currentTarget 현재 click시 이벤트가 동작하고 있는 요소
+
+        // case 2 foreach의 this
+        [1,2,3].forEach(function(a){
+            console.log("2:" + this); // 일반 함수에서의 windw
+        });
+
+        // case 3 foreach에서 arrow function 사용 시
+        [1,2,3].forEach((a) => {
+            console.log("3:" + this); // arrow function 사용 시 e.currentTarget
+        });
+    })
+
+    // case 4 오브젝트 내에서 콜백 함수를 쓸 경우의 this
+    var 오브젝트 = {
+        이름들 : ['김', '이', '박'],
+        함수 : function(){
+            console.log("4 함수:" + this); //object
+            오브젝트.이름들.forEach(function(){
+                console.log("4 for:" + this); // window
+            })
+            오브젝트.이름들.forEach(() => {
+                console.log("4 arrowfunction - for:" + this); //obejct 상위에서의 this 결과와 같음
+            })
+        }
+    }
+</script>

@@ -1,0 +1,51 @@
+<div>
+</div>
+<!-- 
+<script>
+    // 연습문제 
+    //case 1 
+    var 사람 = {
+        name: '손흥민',
+        sayHi: function(){
+            console.log('안녕 나는' + this.name);
+        }
+    }
+
+    사람.sayHi();
+
+    //case 2
+    var 자료 = {
+        data: [1,2,3,4,5],
+        자료전부더하기 : function(){
+            this.data.forEach((a) => {
+                console.log(a); // 더해줭
+            })
+        }
+    }
+    자료.자료전부더하기();
+
+    //case3 setTimeout 콜백함수 사용
+
+    setTimeout(()=>{
+        console.log('1초뒤 ㅋㅋ')
+    }, 1000)
+</script> -->
+<script>
+    // var vs let , const
+    // case 1 재선언 -- var 재선언 가능 // let const 재선언 금지
+
+    // case 2 할당 -- var let 재할당 가능 // const 재할당 금지 (constant)
+    // 단, const로 object를 만들었을때에는 내부의 값을 재할당 할 수 있음
+
+    // case 3 내부의 값을 변경 불가능한 object를 만들기
+    const 사람 = {이름 : 'kim'}
+    Object.freeze(사람);
+
+    사람.이름 = 'park'; //에러가 나지 않으나 값이 바뀌지 않는다.
+
+    //case 4 변수의 범위 var 범위 function // let const 범위 {}
+    function 함수(){
+        var 이름 = 'Kim'; //var -- function 안에서만 존재함
+    }
+
+</script>

@@ -1,0 +1,33 @@
+<div></div>
+
+<script>
+    'use strict'; // js strict mode
+
+    console.log(this); // 1. { window } 
+
+    function 함수(){
+        console.log(this);//2. undefined
+    }
+
+    함수();
+
+    var 오브젝트 = {
+        data: 'kim',
+        함수 : function() {
+            //3. arrow function (this) -> window
+            //4. 동작하고 있는 오브젝트의 this
+            console.log(this); 
+        }
+    }
+
+    오브젝트.함수();
+
+    var 오브젝트2 = {
+        data : {
+            함수 : function(){
+                console.log(this);
+            }
+        }
+    }
+    오브젝트2.data.함수();
+</script>
