@@ -1,0 +1,59 @@
+<div></div>
+<script>
+    // case 1 함수 호출 시 부족한 파라미터에 default parameter
+    function 더하기(a, b = 10){ // default param 1. b = 10 <= 디폴트 파라미터 10을 지정 2. b = 2 * a <= a 3. b = 함수()도 가능
+        console.log(a + b);
+    }
+
+    console.log(더하기(1));
+
+    //case 2 함수의 파라미터를 한꺼번에 싸잡아서 다루고 싶을 때
+    function 함수(a,b,c){ //params
+        console.log(arguments); //arguments 함수 사용 return data = Array 데이터로 쓸 수 있다.
+        console.log(arguments[0]); //1
+        console.log(arguments[1]); //2
+        console.log(arguments[2]); //3 결론. arguments 함수는 모든 파라미터를 배열에 담는 변수로 쓸 수 있음
+
+        arguments[1] = 4;
+
+        console.log(arguments[1]); //4 재할당 가능
+
+        console.log(typeof arguments);// type은 object
+        console.log( arguments);// type은 object
+
+    }
+
+    함수(1,2,3);
+
+    //case 3 rest param
+    //let 함수2 = (a, ...c, b) => { error sperad param은 문법적으로 마지막에 위치해야함
+    let 함수2 = (a,b,...c) => {
+        console.log(c);
+    };
+ 
+    함수2('1','2','3','4','5'); // 파라미터 1, 2는 args a b 에 할당되고 나머지는 spread params에 들 Array로 들어감
+
+
+
+
+
+/* 
+    // 연습문제 
+    var a = [1,2,3];
+    var b = ['you', 'are'];
+    var c = function(a,b){
+    console.log( [[...a], ...[...b]][1] )
+    }
+    c(a,b);
+
+    var numbers = [2,3,4,5,6,7,1,3,4,5];
+    var max = Math.max(...numbers);
+    console.log(max);
+
+    function 정렬 (...ㅋㅋ){
+        return ㅋㅋ.sort((a,b) => a-b );
+    }
+
+    console.log(정렬('beer'));
+     */
+</script>

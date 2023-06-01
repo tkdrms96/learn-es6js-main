@@ -1,0 +1,50 @@
+<script>
+    //...Array 대괄호 제거
+    var 어레이 = ['hello', 'world'];
+    // console.log(...어레이); //hello world
+    //...String -> char
+    var 문자 = 'hello';
+    // console.log(...문자); // 'h' 'e' 'l' 'l' 'o'
+
+    // case 1 ...spread operator 어레이 합치기 / 복사
+    var a = [1,2,3];
+    var b = [4,5];
+
+    var c = [...a , ...b];
+
+    console.log(c);
+
+    //case 2 spread operator를 하지 않고 배열을 복사 할 경우?
+    var a = [1,2,3];
+    // var b = a; // 값을 공유함
+     var b = [...a]; // 값을 공유하지 않고 독립적인 값을 가짐
+
+    a[3] = 4; 
+    
+    console.log(b);
+
+    //case 3 spread operator -- object copy 중괄호 해체 case 2와 같이 ...을 하지않을 경우 값을 공유하는 독립적이지 못한 레퍼런스
+    var o1 = { a : 1, b : 2};
+    var o2 = { ...o1, c: 3 };
+
+    console.log(o1);
+
+    //case 4 값이 중복 될 경우? 최종으로 들어오는 값 update
+
+    //case 5 함수의 파라미터에 배열을 보낼 때 사용할 수 있음
+    var 숫자 = [1,2,3];
+
+    function 더하기 (a,b,c){
+        return a + b + c;
+    }
+
+    console.log(더하기(...숫자));
+
+    //case 6 날짜, 시간 등을 받아온 new 생성자 호출 시 사용 가능
+    var dateField = [1996, 12, 29];
+
+    var date = new Date(...dateField);
+
+    console.log("date = " + date);
+
+</script>
