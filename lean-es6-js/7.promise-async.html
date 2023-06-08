@@ -1,0 +1,67 @@
+<script>
+    // import exios from 'exios';
+
+    //프로미스는 자바스크립트에서 콜백함수를 도와주는 문법
+    // then, catch , finally 등이 있음
+    var 프로미스 = new Promise(function(resolve ,reject){
+        //Promise 예시
+        resolve(); // 성공 -> then
+        reject(); // 실패 -> catch
+    });
+
+    프로미스.then(function(){
+        //프로미스 성공시 실행할 코드 (콜백)
+    }).then(function(){
+        //두번째로 실행할 코드 (콜백)
+    }).catch(function(){
+        //실패시 실행할 코드
+    }).finally(function(){
+        //성공 or 실패 시 실행할 코드
+    })
+
+    //axios와 promise 사용 예시
+    const getUserInfo = () => {
+        return new Promise((reslove, reject) => {
+            axios({
+                url: '코드',
+                method:'get',
+            })
+            .then(res => {
+                if(res.데이터 === 'succ'){
+                    resolve(res);
+                }else {
+                    reject(res);
+                }
+            }).catch(error => {
+                reject(error)
+            })
+        })
+    }
+
+    //여러개 Promise를 사용할 때 -> Promise.all
+</script>
+
+<img id="test" src="https://codingapple1.github.io/kona.jpg"> 
+<!-- 사용예제 -->
+<script>
+    var 이미지로딩 = new Promise((reslove, reject) => {
+        var img = document.querySelector('#test');
+        img.addEventListener('load', function(){
+            reslove();
+        })
+        img.addEventListener('error', function(){
+            reject();
+        })
+    });
+    이미지로딩.then(function(){
+        console.log('로딩성공함');
+    }).catch(function(){
+        console.log('로딩실패함');
+    });
+</script>
+
+<!-- 아 난 프로미스 쓰기 싫다 async await -->
+
+<script>
+    
+</script>

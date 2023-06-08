@@ -1,0 +1,25 @@
+<script>
+    // 일반 for
+
+    // forEach() Array
+
+    //for in Object
+    var obj = { name : 'Kim', age : 30};
+
+    Object.getOwnPropertyDescriptor(obj,'name'); // 오브젝트에 대한 정보 출력
+    // enumerable === true만 반복해줌 enumerable <- 셀수 있는지에 대한 여부
+    // value: "Kim", writable: true, enumerable: true, configurable: true
+    // 부모의 prototype도 반복함
+    for (var key in obj){
+        if(obj.hasOwnProperty(key)){// 부모의 prototype을 반복하지 않겠다
+            console.log(obj[key]);
+        }
+    }  
+    //for of iterable Array, 문자, arguments, NodeList, Map, Set --- iterable인 자료형
+    var arr = [2,3,4,5];
+
+    for (var 자료 of arr){
+        console.log(자료);
+    } 
+
+</script>
