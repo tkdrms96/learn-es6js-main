@@ -1,0 +1,28 @@
+<!-- 
+    symbol - object의 private한 key 값 (변경 불가능한 원시타입)
+    주석을 달거나?
+ -->
+
+
+ <script>
+
+    var weight = Symbol('weight');
+    
+    var person = {name : 'Kim'};
+    person[weight] = 100; // symbol을 이용한 자료저장
+
+    // case 1 -- for문을 사용하여 object를 전부 꺼내오고싶다. symbol은 꺼내와지지 않음
+    for(var key in person) {
+        console.log(person[key]);
+    }
+
+    // case 2 전역 변수같은 전역 Symbol 
+    var a = Symbol.for('전역심볼'); //Symbol.for
+
+    // case 3 기본 내장 Symbol
+    var arr = [2,3,4];
+    
+    arr[Symbol.iterator]; 
+
+    
+</script>

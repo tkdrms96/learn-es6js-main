@@ -1,0 +1,43 @@
+<!-- map, set -->
+
+<script>
+    /* map object와 유사함 */
+    var person = new Map();
+    // case 1 자료저장
+    person.set('name', 'Kim');
+    person.set([1,2,3], 'Kim'); // object 타입에서는 string만 키값으로 저장 가능하나 map은 모든 타입으로 자료저장이 가능함
+    // case 2 get
+    person.get('name')
+    // case 3 size
+    // person.size('name')
+    // case 4 delete
+    person.delete('name')
+    
+    // map에서는 for of 반복문 많이씀
+    for (var key of person.keys()){
+        console.log(key);
+    }
+
+    /* Set Array와 유사함 */
+    // case 1 Array 중복 자료 저장됨 -- 중복자료를 허용하지 않을 때 사용한다.
+    var 출석부 = ['john', 'tom', 'andy', 'tom']; 
+
+    // Array -> set
+    var 출석부2 = new Set(출석부);//중복제거
+
+    //case 1 자료 추가
+    출석부2.add('sally');
+
+    //case 2 자료 찾기
+    출석부2.has('sally');
+
+    //case 3 자료 갯수
+    출석부2.size;
+
+    //case 4 자료 삭제
+    // 출석부2.delete('sally');
+
+    // set -> Array
+    var arr2 = [...출석부2]; // 중복 자료를 제거한
+
+</script>
