@@ -22,7 +22,7 @@
     // case 1 Array 중복 자료 저장됨 -- 중복자료를 허용하지 않을 때 사용한다.
     var 출석부 = ['john', 'tom', 'andy', 'tom']; 
 
-    // Array -> set
+    // Array -> setz
     var 출석부2 = new Set(출석부);//중복제거
 
     //case 1 자료 추가
@@ -40,4 +40,11 @@
     // set -> Array
     var arr2 = [...출석부2]; // 중복 자료를 제거한
 
+    const resizeDom = document.querySelector('.resize-dom');
+    const result = document.querySelector('.result');
+
+    window.addEventListener("resize", function() {
+    result.innerText = resizeDom.getBoundingClientRect().width;
+    })
+    
 </script>
